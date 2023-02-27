@@ -31,6 +31,28 @@ void PrintArray(string[] array)
     }
     Console.WriteLine("]");
 }
+string[] StringMassUpToThreeElem(string[] array)
+{
+    int size = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3) size++;
+    }
 
+    string[] newArray = new string[size];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+
+        if (array[i].Length <= 3)
+        {
+            newArray[j] = array[i];
+            j++;
+        }
+    }
+    return newArray;
+}
 string[] arr = CreateStringMass(index);
 PrintArray(arr);
+string[] stringMassUpToThreeElem = StringMassUpToThreeElem(arr);
+PrintArray(stringMassUpToThreeElem);
